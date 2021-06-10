@@ -1,0 +1,47 @@
+GET http://localhost:3000/article?visible=3&page=1&search=art&sort=desc
+
+###
+PATCH  http://localhost:3000/article/60c1a588d5a8a8338c2054d9
+Content-Type: application/json
+
+{
+  "title" : "article 2",
+  "content" : "Content 3"
+}
+
+###
+POST http://localhost:3000/article
+Content-Type: application/json
+
+{
+  "title" : "article 2",
+  "content" : "Content 3"
+}
+
+###
+DELETE http://localhost:3000/article/60c1ad7c55245d146c7376ab
+
+############################# COMMENT ###################################
+GET http://localhost:3000/comment
+
+###
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+  "articleID": "60c1b7c377dff45a84e26a10",
+  "name" : "guest 1",
+  "comment" : "Comment tes 1"
+}
+
+###
+PATCH http://localhost:3000/comment/60c1aba8c4b2fe0dfcbd73ca
+Content-Type: application/json
+
+{
+  "name" : "guest 1",
+  "comment" : "Comment tes edited"
+}
+
+###
+DELETE http://localhost:3000/comment/60c1b7cd77dff45a84e26a11
